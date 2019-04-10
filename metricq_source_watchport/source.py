@@ -41,7 +41,7 @@ class WatchPortSource(metricq.IntervalSource):
 
     async def serial_send(self, msg):
         self.writer.write(msg.encode())
-        await asyncio.sleep(0.5)
+        await self.writer.drain()
 
     async def read_temperature(self):
         await self.serial_send('T\r')
