@@ -33,7 +33,7 @@ class WatchPortSource(metricq.IntervalSource):
         await self[self.metric_name].send(metricq.Timestamp.now(), temp)
 
     async def serial_connect(self, path):
-        self.reader, self.writer = await serial_asyncio.open_serial_connection(url=path, baudrate=115200)
+        self.reader, self.writer = await serial_asyncio.open_serial_connection(loop=self.loop, url=path, baudrate=115200)
 
         await self.serial_send('I\r')
         ident = await self.reader.read(n=100)
