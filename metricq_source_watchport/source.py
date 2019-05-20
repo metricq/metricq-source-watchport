@@ -23,7 +23,7 @@ class WatchPortSource(metricq.IntervalSource):
         self.period = 1 / rate
         meta = {
            'rate': rate,
-           'unit': 'C',
+           'unit': '℃',
         }
         await self.declare_metrics({self.metric_name: meta})
 
