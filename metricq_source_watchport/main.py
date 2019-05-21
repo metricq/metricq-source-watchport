@@ -9,19 +9,19 @@ from .source import WatchPortSource
 logger = get_logger()
 
 click_log.basic_config(logger)
-logger.setLevel('INFO')
+logger.setLevel("INFO")
 
 click_completion.init()
 
 
 @click.command()
-@click.option('--server', default='amqp://localhost/')
-@click.option('--token', default='source-watchport')
+@click.option("--server", default="amqp://localhost/")
+@click.option("--token", default="source-watchport")
 @click_log.simple_verbosity_option(logger)
 def source(server, token):
     src = WatchPortSource(token=token, management_url=server)
     src.run()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     source()
