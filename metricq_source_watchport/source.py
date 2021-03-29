@@ -11,7 +11,6 @@ class WatchPortSource(metricq.IntervalSource):
     def __init__(self, *args, **kwargs):
         logger.info("initializing WatchPortSource")
         super().__init__(*args, **kwargs)
-        self.period = None
 
     @metricq.rpc_handler("config")
     async def _on_config(self, **config):
