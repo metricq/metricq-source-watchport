@@ -16,7 +16,7 @@ setup(
         "click-completion",
         "click_log",
         "colorama",
-        "metricq",
+        "metricq~=3.0",
         "pyserial-asyncio",
     ],
 )
