@@ -30,7 +30,7 @@ class WatchPortSource(metricq.IntervalSource):
 
     async def serial_connect(self, path):
         self.reader, self.writer = await serial_asyncio.open_serial_connection(
-            loop=self.event_loop, url=path, baudrate=115200
+            url=path, baudrate=115200
         )
 
         await self.serial_send("I\r")

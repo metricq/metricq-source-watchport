@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="metricq_source_watchport",
-    version="0.1",
+    version="0.2",
     author="TU Dresden",
     python_requires=">=3.5",
     packages=["metricq_source_watchport"],
@@ -16,7 +16,7 @@ setup(
         "click-completion",
         "click_log",
         "colorama",
-        "metricq~=3.0",
+        "metricq~=4.0",
         "pyserial-asyncio",
     ],
 )
